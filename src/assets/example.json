@@ -1,0 +1,149 @@
+{
+  "initiateDateTime": "2021-12-01T22:10:19.5431049Z",
+  "logoImageUrl": "https://bothworldsnorder.blob.core.windows.net/logos/13bcc4a5-13d8-413a-e458-08d976398610.png?sv=2020-08-04&se=2021-12-01T23%3A10%3A19Z&sr=b&sp=r&sig=JFiPlgDt9bMwlEYvIuJkGpEaIzpFXXLhNFMW7Q5VSmA%3D",
+  "orgSettings": {
+    "id": "cedc3af5-85be-4df5-991b-08d976398611",
+    "yearEndDay": 16,
+    "yearEndMonth": 0,
+    "taxNumber": "41-456-346",
+    "taxRegistered": true,
+    "taxRate": 15,
+    "invoiceFooter": "Please pay by 20th of Month into account 01-12345-34456-00",
+    "invoiceAddress": "FizzBuzz Consulting\nChristchurch\nNew Zealand",
+    "invoiceTradingName": null,
+    "invoicePaymentTerms": "10",
+    "invoiceGroupChargesByDate": false,
+    "logoSecureLink": null,
+    "orgId": "13bcc4a5-13d8-413a-e458-08d976398610",
+    "orgName": "FizzBuzz3 4"
+  },
+  "transaction": {
+    "lines": [
+      {
+        "accountId": "70cf7982-bd24-4e49-8085-cc70f0b45f7e",
+        "amount": 30.0,
+        "description": "test5",
+        "id": "8f003005-2c89-4497-32ac-08d9b5175bf3",
+        "taxRate": 0.15
+      },
+      {
+        "accountId": "e0cdc23c-a7f9-4076-2c2a-08d979598993",
+        "amount": 22.2,
+        "description": "test6",
+        "id": "cb9257a3-685e-46c9-32ad-08d9b5175bf3",
+        "taxRate": 0.0
+      }
+    ],
+    "ledgerItems": [
+      {
+        "accountId": "70cf7982-bd24-4e49-8085-cc70f0b45f7e",
+        "credit": 26.086957,
+        "debit": 0.0,
+        "id": "a0cf0384-8af8-41fa-7e50-08d9b5175c4a",
+        "rule": "C62D647A",
+        "transactionId": "ba7bd1a7-7b64-4231-d8ab-08d9b30ff475",
+        "date": "2021-11-30T00:00:00"
+      },
+      {
+        "accountId": "f41f5651-b47e-40c0-b2f0-6952652f273a",
+        "credit": 0.0,
+        "debit": 30.0,
+        "id": "66702907-f1a9-4149-7e51-08d9b5175c4a",
+        "rule": "F18DECEF",
+        "transactionId": "ba7bd1a7-7b64-4231-d8ab-08d9b30ff475",
+        "date": "2021-11-30T00:00:00"
+      },
+      {
+        "accountId": "c93fea46-4052-4aeb-80bd-0d2b579b8682",
+        "credit": 3.913043,
+        "debit": 0.0,
+        "id": "77277d8d-4259-42a9-7e52-08d9b5175c4a",
+        "rule": "5A7403B4",
+        "transactionId": "ba7bd1a7-7b64-4231-d8ab-08d9b30ff475",
+        "date": "2021-11-30T00:00:00"
+      },
+      {
+        "accountId": "e0cdc23c-a7f9-4076-2c2a-08d979598993",
+        "credit": 22.20,
+        "debit": 0.0,
+        "id": "b57f5b6a-10f1-4d85-7e53-08d9b5175c4a",
+        "rule": "C62D647A",
+        "transactionId": "ba7bd1a7-7b64-4231-d8ab-08d9b30ff475",
+        "date": "2021-11-30T00:00:00"
+      },
+      {
+        "accountId": "f41f5651-b47e-40c0-b2f0-6952652f273a",
+        "credit": 0.0,
+        "debit": 22.20,
+        "id": "5252dbbf-1a96-4f2f-7e54-08d9b5175c4a",
+        "rule": "F18DECEF",
+        "transactionId": "ba7bd1a7-7b64-4231-d8ab-08d9b30ff475",
+        "date": "2021-11-30T00:00:00"
+      }
+    ],
+    "invoice": {
+      "invoiceLines": [
+        {
+          "id": "0528d603-d68f-43f0-5c9e-08d9b31388a9",
+          "amount": 30.00,
+          "description": "test5",
+          "taxRate": 0.15,
+          "quantity": 3.0,
+          "units": 0.0,
+          "unitsString": "Hours",
+          "rate": 10.0,
+          "accountId": "70cf7982-bd24-4e49-8085-cc70f0b45f7e",
+          "chargeIds": []
+        },
+        {
+          "id": "a0ad6c52-90e7-4332-5c9f-08d9b31388a9",
+          "amount": 22.20,
+          "description": "test6",
+          "taxRate": 0.0,
+          "quantity": 5.0,
+          "units": 0.0,
+          "unitsString": "testff",
+          "rate": 4.44,
+          "accountId": "e0cdc23c-a7f9-4076-2c2a-08d979598993",
+          "chargeIds": []
+        }
+      ],
+      "dueDate": "2021-11-30T00:00:00",
+      "id": "88aeca0d-d54c-4159-6b5f-08d9b313889c",
+      "number": "INV-093",
+      "status": "Approved",
+      "billTo": "test",
+      "type": "Invoice",
+      "paidDate": null,
+      "paidIntoAccountId": null,
+      "jobId": "c66e808e-6f50-428b-4a89-08d9a8b6e1d7",
+      "clientId": "1745f1cb-cb34-4773-71af-08d9a8b6cc0c",
+      "generationStatus": "Generating"
+    },
+    "expense": {
+      "id": "00000000-0000-0000-0000-000000000000",
+      "paidFromType": null,
+      "paidFromAccountId": null,
+      "whoPaidString": null,
+      "needsReimbursed": false,
+      "whoPaidAccountId": null,
+      "dueDate": null
+    },
+    "linkedCashAccountId": null,
+    "amount": 52.2,
+    "subtotal": 52.2,
+    "tax": 3.91,
+    "date": "2021-11-30T00:00:00",
+    "details": "test",
+    "direction": "Sent",
+    "id": "ba7bd1a7-7b64-4231-d8ab-08d9b30ff475",
+    "party": "This is a test",
+    "ref": null,
+    "hasManualLedger": false,
+    "modifiedTransactionLines": false,
+    "type": "Invoice",
+    "taxMode": "Inclusive"
+  },
+  "pk": "00000000-0000-0000-0000-000000000000",
+  "id": "100e2efd-c2a3-4ffb-ab1d-bf5ff593f36b"
+}

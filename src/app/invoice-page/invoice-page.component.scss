@@ -1,0 +1,173 @@
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.footer {
+  flex-shrink: 0;
+}
+
+.invoice {
+  flex: 1 0 auto;
+  min-height: 210mm;
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+
+    div {
+      flex: 1;
+    }
+
+    &-img {
+      max-width: 225px;
+      height: auto;
+    }
+
+    &-name {
+      font-weight: 700;
+      font-size: 28px;
+      text-align: center;
+    }
+
+    &-tax {
+      text-align: right;
+
+      &-label {
+        font-weight: 700;
+        font-size: 18px;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  &-details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+
+    td {
+      padding: 8px;
+
+      &:first-of-type {
+        vertical-align: top;
+        white-space: nowrap;
+        padding-left: 0;
+        font-weight: 700;
+      }
+
+      &:last-of-type {
+        padding-right: 0;
+      }
+    }
+
+    .left-table table {
+      min-width: 150px;
+
+      tr:nth-child(2) {
+        height: 34.5px;
+      }
+
+      td {
+        &:first-of-type {
+          padding-left: 0;
+        }
+
+        &:last-of-type {
+          white-space: pre-line;
+        }
+      }
+    }
+
+    .right-table table {
+      min-width: 200px;
+
+      td {
+        &:last-of-type {
+          text-align: right;
+        }
+      }
+    }
+  }
+
+  &-lines-table {
+    margin-bottom: 10px;
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+
+    }
+    thead tr,
+    tbody tr:last-of-type {
+      border-bottom: 1px solid #000;
+    }
+
+    th, td {
+      min-width: 80px;
+      vertical-align: top;
+    }
+
+    td:first-of-type,
+    th:first-of-type {
+      text-align: left;
+      width: 100%;
+    }
+    th:not(:first-of-type),
+    td:not(:first-of-type) {
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    th, td {
+      padding: 8px;
+    }
+
+    th:first-of-type,
+    td:first-of-type {
+      padding-left: 0;
+    }
+
+    th:last-of-type,
+    td:last-of-type {
+      padding-right: 0;
+      min-width: 200px;
+    }
+  }
+
+  &-total-table {
+    table {
+      border-collapse: collapse;
+      min-width: 200px;
+      float: right;
+    };
+
+    td {
+      padding: 8px;
+
+      &:first-of-type {
+        padding-left: 0;
+        font-weight: 700;
+      }
+
+      &:last-of-type {
+        padding-right: 0;
+        text-align: right;
+      }
+    }
+
+    tr:last-of-type {
+      border-top: 1px solid #000;
+      border-bottom: 2px solid #000;
+      font-weight: 700;
+    }
+  }
+
+  &-footer-terms span {
+    font-style: italic;
+  }
+}

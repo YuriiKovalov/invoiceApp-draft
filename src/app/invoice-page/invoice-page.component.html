@@ -1,0 +1,136 @@
+<div class="container">
+  <ng-container *ngIf="!invoiceData">
+    Loading...
+  </ng-container>
+
+  <ng-container *ngIf="invoiceData">
+    <div class="invoice" id="invoiceloaded">
+
+      <div class="content">
+        <div class="invoice-header">
+          <div>
+            <img
+              *ngIf="invoiceData.logoImageUrl"
+              [src]="invoiceData.logoImageUrl"
+              alt="Organization image"
+              class="invoice-header-img"
+            >
+          </div>
+          <div class="invoice-header-name">
+            {{ invoiceData.orgSettings.orgName }}
+          </div>
+          <div class="invoice-header-tax">
+            <div class="invoice-header-tax-label">Tax Invoice</div>
+            <div>{{ invoiceData.orgSettings.taxNumber }}</div>
+          </div>
+        </div>
+
+        <div class="invoice-details">
+          <div class="left-table">
+            <table>
+              <tbody>
+                <tr>
+                  <td>From</td>
+                  <td>{{ invoiceData.orgSettings.invoiceAddress }}</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Bill To</td>
+                  <td>{{ invoiceData.transaction.invoice.billTo }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="right-table">
+            <table>
+              <tbody>
+                <tr>
+                  <td>Invoice No.</td>
+                  <td>{{ invoiceData.transaction.invoice.number }}</td>
+                </tr>
+                <tr>
+                  <td>Issued Date</td>
+                  <td>{{ invoiceData.transaction.invoice.date | date: 'd/M/yyyy' }}</td>
+                </tr>
+                <tr>
+                  <td>Due Date</td>
+                  <td>{{ invoiceData.transaction.invoice.dueDate | date: 'd/M/yyyy' }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="invoice-lines-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Description</th>
+                <ng-container *ngIf="invoiceData.orgSettings.invoiceGroupChargesByDate">
+                  <th>Date</th>
+                </ng-container>
+                <th>Unit</th>
+                <th>Qty</th>
+                <th>Rate</th>
+                <th>Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                *ngFor="let invoice of invoiceData.transaction.invoice.invoiceLines"
+              >
+                <td>{{invoice.description}}</td>
+                <ng-container *ngIf="invoiceData.orgSettings.invoiceGroupChargesByDate">
+                  <td>{{invoiceData.transaction.invoice.date | date: 'YYYY-MM-dd'}}</td>
+                </ng-container>
+                <td>{{invoice.unitsString}}</td>
+                <td>{{invoice.quantity}}</td>
+                <td>{{invoice.rate.toFixed(2) | currency }}</td>
+                <td>{{invoice.amount.toFixed(2) | currency }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="invoice-total-table">
+          <table>
+            <tbody>
+              <tr>
+                <td>Subtotal</td>
+                <td>{{ getSubTotal().toFixed(2) | currency }}</td>
+              </tr>
+              <tr>
+                <td>{{ invoiceData?.transaction?.taxMode === 'Inclusive' ? 'Includes Tax' : 'Tax'}}</td>
+                <td>{{ getTax().toFixed(2) | currency }}</td>
+              </tr>
+              <tr>
+                <td>Total</td>
+                <td>{{ getTotal().toFixed(2) | currency }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="invoice-footer-details">
+        <div
+          class="invoice-footer-terms"
+          *ngIf="getInvoicePaymentTerms()"
+        >
+          <span>Payment Terms:</span>
+          {{ getInvoicePaymentTerms() }}
+          Days.
+        </div>
+        <div class="invoice-footer-description">
+          {{invoiceData.orgSettings.invoiceFooter}}
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>

@@ -1,0 +1,17 @@
+.input-page {
+  padding: 20px;
+
+  &--textarea {
+    resize: none;
+    display: block;
+    width: 600px;
+    height: 400px;
+    margin: 0 auto;
+  }
+
+  &--button {
+    display: block;
+    padding: 10px 15px;
+    margin: 15px auto 0 auto;
+  }
+}
